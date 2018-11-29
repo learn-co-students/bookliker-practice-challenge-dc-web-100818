@@ -23,8 +23,8 @@ This will serve your code on http://localhost:3000.
 You will be using the following backend to get the list of books. The expectation here is that you will include the following features
 
 - Get a list of books & render them
-  `http://localhost:3000/books`
-- Be able to click on a book, you should see the book's thumbnail and description and a list of users who have liked the book.
+  `GET http://localhost:3000/books`
+- Be able to click on a book, you should see the book's thumbnail and description and a list of users who have liked the book. You can get this information by making another fetch `GET http://localhost:3000/books/:id`
 - You can like a book by clicking on a button. You are user 1 `{"id":1, "username":"pouros"}`, so to like a book send a `PATCH` request to `http://localhost:3000/books/:id` with an array of users who like the book. This array should be equal to the existing array of users that like the book, plus your user. For example, if the previous array was `"[{"id":2, "username":"auer"}, {"id":8, "username":"goodwin"}]`, you should send as the body of your PATCH request:
 
 ```javascript
